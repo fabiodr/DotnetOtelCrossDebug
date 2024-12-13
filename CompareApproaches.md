@@ -1,4 +1,4 @@
-Overview of all the approaches researched, highlighting their key differences and trade-offs. We started with a basic scenario of debugging .NET applications in Docker Compose and evolved to consider more complex scenarios involving Kubernetes, distributed debugging, and flexibility.
+Overview of approaches researched, highlighting their key differences and trade-offs. We started with a basic scenario of debugging .NET applications in Docker Compose and evolved to consider more complex scenarios involving Kubernetes, distributed debugging, and flexibility.
 
 **1. Basic Docker Compose with `attach` Debugging (VSCode and Rider):**
 
