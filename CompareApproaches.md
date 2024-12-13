@@ -1,5 +1,17 @@
 Overview of approaches researched, highlighting their key differences and trade-offs. We started with a basic scenario of debugging .NET applications in Docker Compose and evolved to consider more complex scenarios involving Kubernetes, distributed debugging, and flexibility.
 
+**Summary Table:**
+
+| Approach                                    | Debugging Support                   | Kubernetes Support          | VSCode Integration | Flexibility (Compose/K8s) | Complexity |
+| ------------------------------------------- | ----------------------------------- | --------------------------- | ------------------ | -------------------------- | ---------- |
+| Basic Docker Compose + `attach`            | Manual, per service                  | No                          | Good               | Docker Compose only        | Low        |
+| Dev Containers + Docker Compose             | Automated, per service (unified)    | No                          | Excellent          | Docker Compose only        | Medium     |
+| Dev Containers + Kubernetes (Conceptual)   | Hypothetical, unified               | Yes (Ideal)                 | Limited            | Both (Ideally)            | High       |
+| Telepresence + Kubernetes                  | Excellent, distributed              | Yes                         | Developing extension | Primarily Kubernetes      | Medium     |
+| Skaffold + Docker Compose/Kubernetes       | Limited, per service                  | Yes                         | Good               | Both                       | Medium     |
+| Cloud-Based Dev Environments               | Varies, often good                    | Yes (Usually)               | Excellent          | Both (Usually)            | Low-Medium |
+| Bridge to Kubernetes                        | Good, within Kubernetes context     | Yes                         | Good               | Primarily Kubernetes       | Medium     |
+
 **1. Basic Docker Compose with `attach` Debugging (VSCode and Rider):**
 
 *   **Description:**
@@ -129,18 +141,6 @@ Overview of approaches researched, highlighting their key differences and trade-
 *   **Best for:**
     *   Developers who need to test and debug their code within the context of a larger Kubernetes application.
     *   Teams already using Kubernetes for development or staging.
-
-**Summary Table:**
-
-| Approach                                    | Debugging Support                   | Kubernetes Support          | VSCode Integration | Flexibility (Compose/K8s) | Complexity |
-| ------------------------------------------- | ----------------------------------- | --------------------------- | ------------------ | -------------------------- | ---------- |
-| Basic Docker Compose + `attach`            | Manual, per service                  | No                          | Good               | Docker Compose only        | Low        |
-| Dev Containers + Docker Compose             | Automated, per service (unified)    | No                          | Excellent          | Docker Compose only        | Medium     |
-| Dev Containers + Kubernetes (Conceptual)   | Hypothetical, unified               | Yes (Ideal)                 | Limited            | Both (Ideally)            | High       |
-| Telepresence + Kubernetes                  | Excellent, distributed              | Yes                         | Developing extension | Primarily Kubernetes      | Medium     |
-| Skaffold + Docker Compose/Kubernetes       | Limited, per service                  | Yes                         | Good               | Both                       | Medium     |
-| Cloud-Based Dev Environments               | Varies, often good                    | Yes (Usually)               | Excellent          | Both (Usually)            | Low-Medium |
-| Bridge to Kubernetes                        | Good, within Kubernetes context     | Yes                         | Good               | Primarily Kubernetes       | Medium     |
 
 **Recommendations:**
 
